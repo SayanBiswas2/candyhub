@@ -12,7 +12,7 @@ const handler = async(req, res) => {
     // await feedback.save()
     let user = User.find({})
     console.log(user)
-    res.json("data")
+    res.json(user)
 }
 
 export default connectDb(handler)
