@@ -6,6 +6,7 @@ import { useState,useEffect } from 'react'
 import { useRouter } from 'next/router';
 import { setEmail } from '@/app/slice/authSlice'
 import { useDispatch,useSelector } from 'react-redux'
+import axios from 'axios';
 
 function signup() {
   let [name,setName] =useState('')
@@ -24,18 +25,12 @@ function signup() {
   },[loggedIn])
 
   const submit =async()=>{
-    let res = await fetch(`api/signup`,{
-      'method':'post',
-      'headers':{
-        'Content-Type': 'application/json'
-      },
-      'body':JSON.stringify({
+    let res = await axios.post(`api/signup`,{
         "name":name,
         "email":userEmail,
         "pass":pass
       })
-    })
-    let data = await res.json()
+    //let data = await res.json()
     dispatch(setEmail(email))
 
     if(res.status == 400){

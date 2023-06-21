@@ -25,11 +25,11 @@ function candys() {
     const func = async() =>{
       let slug = router.query.slug
       setSlug(slug)
-      let data = await fetch(`/api/getProduct?slug=${slug}`)
-      let res = await data.json()
-      if(data.status == 200){
-        setPageProduct(res)
-        console.log(res)
+      let res = await axios.get(`/api/getProduct?slug=${slug}`)
+      //let res = await data.json()
+      if(res.status == 200){
+        setPageProduct(res.data)
+        console.log(res.data)
       }
     }
     if(pageproduct.length == 0){

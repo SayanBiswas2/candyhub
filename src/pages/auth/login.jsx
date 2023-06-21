@@ -25,17 +25,11 @@ function loginin() {
   },[loggedIn])
 
   const login = async()=>{
-    let res = await fetch(`/api/login`,{
-      method:'post',
-      headers:{
-        'Content-Type': 'application/json'
-      },
-      body:JSON.stringify({
+    let res = await axios.post(`/api/login`,{
         email:email,
         pass:pass
       })
-    })
-    let data = await  res.json()
+    //let data = await  res.json()
 
     if(res.status == 200){
       dispatch(setLoginStatus(true))

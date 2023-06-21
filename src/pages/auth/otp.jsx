@@ -5,6 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import React, { useEffect, useState } from 'react'
 import OtpInput from 'react-otp-input';
 import { setLoginStatus } from '@/app/slice/authSlice';
+import axios from 'axios';
 
 
 const otp = () => {
@@ -23,18 +24,12 @@ const otp = () => {
     useEffect(()=>{
         if(otp.toString().length == 6){
             let func= async()=> {
-                let res = await fetch(`/api/otpVarification`,{
-                    'method':'post',
-                    'headers':{
-                      'Content-Type': 'application/json'
-                    },
-                    'body':JSON.stringify({
+                let res = await axios.post(`/api/otpVarification`,{
                       "type":"signup",
                       "otp":otp,
                       "email":email.value
                     })
-                })
-                let data = await res.json()
+                //let data = await res.json()
                 if(res.status == 200){
                     dispatch(setLoginStatus(true))
                     window.history.go(-3)

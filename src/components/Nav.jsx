@@ -11,6 +11,7 @@ import { useRouter } from 'next/router';
 import { useSelector,useDispatch } from 'react-redux';
 import { setEmail,setLoginStatus } from '@/app/slice/authSlice';
 import ProfileBar from './ProfileBar';
+import axios from 'axios';
 
 function Nav() {
   let [cart, setCart] = useState(false)
@@ -61,10 +62,10 @@ function Nav() {
   let loggedIn = useSelector((state) => state.auth.loggedIn)
   useEffect(()=>{
     let func = async() =>{
-      let res = await fetch(`/api/jwtverify`)
-      let data = await res.json()
+      let res = await axios.get(`/api/jwtverify`)
+      //let data = await res.json()
       if(res.status == 200){
-      dispatch(setEmail(data))
+      dispatch(setEmail(res.data))
       dispatch(setLoginStatus(true))
       }
     }
