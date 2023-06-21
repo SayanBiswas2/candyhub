@@ -1,6 +1,5 @@
 import connectDb from "@/middleware/mongoose"
 import Order from "@/models/order"
-import order from "../order"
 
 const handler = async(req, res) => {
   if(req.method == "POST"){
