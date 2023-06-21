@@ -19,7 +19,7 @@ function Navsidebar({click,cart}) {
 
   useEffect(()=>{
     if(loggdin){
-      axios.get("/api/getcart").then(res=>{
+      axios.get("/api/getCartData").then(res=>{
         console.log(res)
         if(res.status == 200){
           //dispatch(setCart(res.data))
