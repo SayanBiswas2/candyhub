@@ -1,8 +1,7 @@
 import connectDb from "@/middleware/mongoose"
-import Feedback from "@/models/feedback"
-import User from "@/models/user"
+import { NextResponse } from "next/server"
 
-const handler = async(req, res) => {
+const handler = async(req,res) => {
     // let feedback = new Feedback({
     //     "name":"Sayan",
     //     "email":'sayanbiswas@gmail.com',
@@ -10,9 +9,10 @@ const handler = async(req, res) => {
     // })
 
     // await feedback.save()
-    let user = User.find({})
-    console.log(user)
-    res.json(user)
+    // let user = User.find({})
+    // console.log(user)
+    res.json("done")
+    NextResponse.json("done")
 }
 
 export default connectDb(handler)
