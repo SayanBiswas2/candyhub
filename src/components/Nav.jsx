@@ -61,7 +61,7 @@ function Nav() {
   let loggedIn = useSelector((state) => state.auth.loggedIn)
   useEffect(()=>{
     let func = async() =>{
-      let res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/jwtverify`)
+      let res = await fetch(`/api/jwtverify`)
       let data = await res.json()
       if(res.status == 200){
       dispatch(setEmail(data))

@@ -24,7 +24,7 @@ function signup() {
   },[loggedIn])
 
   const submit =async()=>{
-    let res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/signup`,{
+    let res = await fetch(`/api/signup`,{
       'method':'post',
       'headers':{
         'Content-Type': 'application/json'

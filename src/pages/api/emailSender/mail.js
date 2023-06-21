@@ -73,7 +73,7 @@ export const sendTokenMail = (email,name,token)=> {
     template: 'changePass',
     context: {
       name:name,
-      url:`${process.env.NEXT_PUBLIC_API_URL}/auth/changepassword?token=${token}`
+      url:`/auth/changepassword?token=${token}`
     }       
   };
 

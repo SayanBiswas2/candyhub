@@ -25,7 +25,7 @@ function loginin() {
   },[loggedIn])
 
   const login = async()=>{
-    let res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/login`,{
+    let res = await fetch(`/api/login`,{
       method:'post',
       headers:{
         'Content-Type': 'application/json'

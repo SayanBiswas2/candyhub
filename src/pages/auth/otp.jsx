@@ -23,7 +23,7 @@ const otp = () => {
     useEffect(()=>{
         if(otp.toString().length == 6){
             let func= async()=> {
-                let res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/otpVarification`,{
+                let res = await fetch(`/api/otpVarification`,{
                     'method':'post',
                     'headers':{
                       'Content-Type': 'application/json'
@@ -45,7 +45,7 @@ const otp = () => {
     },[otp])
 
     const resand =async()=>{
-        let res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/otpVarification`,{
+        let res = await fetch(`/api/otpVarification`,{
             'method':'post',
             'headers':{
               'Content-Type': 'application/json'

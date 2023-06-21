@@ -25,7 +25,7 @@ function candys() {
     const func = async() =>{
       let slug = router.query.slug
       setSlug(slug)
-      let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/getProduct?slug=${slug}`)
+      let data = await fetch(`/api/getProduct?slug=${slug}`)
       let res = await data.json()
       if(data.status == 200){
         setPageProduct(res)
@@ -42,7 +42,7 @@ function candys() {
   },[pageproduct])
 
   const checkPin = async() => {
-    let data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/pincode`)
+    let data = await fetch(`/api/pincode`)
     let pins = await data.json()
     pins.includes(parseInt(pin)) ? setService(true) : setService(false);
     pins.includes(parseInt(pin)) ? toast.success("Your PIN code is serviceable") : toast.error("Sorry!Your PIN code is not serviceable");
