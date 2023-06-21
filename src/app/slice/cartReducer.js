@@ -1,10 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  value: {
-    currentCart:{},
-    letterCart:{}
-  },
+  value: Object({
+    currentCart:Object(),
+    letterCart:Object()
+  }),
 }
 
 export const counterSlice = createSlice({

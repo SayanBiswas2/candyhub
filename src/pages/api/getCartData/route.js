@@ -4,6 +4,7 @@ import jwt from "jsonwebtoken";
 
 const handler = async(req, res) => {
     console.log("ok")
+    res.status(200).json("ok")
     let user;
     if(req.cookies.jwttoken  !== undefined){
         let jwtSecretKey = process.env.JWT_KEY;
