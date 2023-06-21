@@ -4,6 +4,7 @@ import Feedback from "@/models/feedback"
 const handler = async(req, res) => {
   if(req.method == "POST"){
     try{
+        // saving a new feedback
         let feedback = new Feedback({
             "name":req.body.name,
             "email":req.body.email,

@@ -5,6 +5,7 @@ import User from "@/models/user";
 import connectDb from "@/middleware/mongoose";
 import welcomeMail, { sendOtpMail } from "../emailSender/mail";
 
+// geneareting a random 6 digit OTP
 const otpGenaretor =() => {
     let otp = Math.floor(Math.random() * 999999)
     if(otp < 100000){
