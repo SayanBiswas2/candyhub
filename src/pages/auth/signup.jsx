@@ -25,7 +25,7 @@ function signup() {
   },[loggedIn])
 
   const submit =async()=>{
-    let res = await axios.post(`api/signup`,{
+    let res = await axios.post(`/api/signup`,{
         "name":name,
         "email":userEmail,
         "pass":pass
