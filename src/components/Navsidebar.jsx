@@ -22,7 +22,7 @@ function Navsidebar({click,cart}) {
       axios.get("/api/getcartdata").then(res=>{
         console.log(res)
         if(res.status == 200){
-          //dispatch(setCart(res.data))
+          dispatch(setCart(res.data))
         }
       }).catch(err=>{
         console.log(err)
