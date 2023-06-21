@@ -2,12 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+  animation-duration: 400ms;
+  scrollbar-width: 0px;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --color-primary: rgb(34 211 238);
 }
 
+.light-theme{
+  --color-secondary: #fff;
+  --color-background: #eef2f6;
+  --color-font: #000;
+}
+
+.dark-theme{
+  --color-secondary: #2c2c6c;
+  --color-background: #1f1f38;
+  --color-font: #fff;
+}
+
+/*
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -15,13 +34,23 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+*/
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
+
+input[type=number] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+button,input[type=button]{
+  cursor: pointer;
+}
+
+
