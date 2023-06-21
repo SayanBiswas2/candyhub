@@ -20,7 +20,7 @@ export default function CarouselComponent() {
       imageConOne.current = --imageConOne.current == -2 ? 1 : imageConOne.current--
       imageConTwo.current = --imageConTwo.current == -2 ? 1 : imageConTwo.current--
       imageConThree.current = --imageConThree.current == -2 ? 1 : imageConThree.current--
-      console.log(imageConOne,imageConTwo,imageConThree)
+      // console.log(imageConOne,imageConTwo,imageConThree)
     },3500)
     return ()=> window.clearInterval(imageInterval)
   },[])
