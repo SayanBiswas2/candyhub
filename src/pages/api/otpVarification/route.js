@@ -3,7 +3,7 @@ import { serialize } from 'cookie';
 import TempUser from "@/models/tempuser";
 import User from "@/models/user";
 import connectDb from "@/middleware/mongoose";
-import welcomeMail, { sendOtpMail } from "./emailSender/mail";
+import welcomeMail, { sendOtpMail } from "../emailSender/mail";
 
 const otpGenaretor =() => {
     let otp = Math.floor(Math.random() * 999999)
