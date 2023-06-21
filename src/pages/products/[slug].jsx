@@ -4,6 +4,7 @@ import Link from 'next/link'
 import axios from 'axios'
 import InfiniteScroll from 'react-infinite-scroll-component'
 
+
 function slug() {
     const router = useRouter()
     const {slug} = router.query
