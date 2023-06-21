@@ -4,9 +4,9 @@ const nextConfig = {
   env:{
     MONGO_URL:"mongodb://localhost:27017/"
   },
-  experimental: {
-    appDir: true,
-  },
+  // experimental: {
+    // appDir: true,
+  // },
   async rewrites() {
     return [
       {

@@ -2,7 +2,7 @@ import User from "@/models/user"
 import crypto from 'crypto'
 import TempUser from "@/models/tempuser"
 import connectDb from "@/middleware/mongoose"
-import {sendOtpMail} from "../emailSender/mail"
+import {sendOtpMail} from "./emailSender/mail"
 
 const otpGenaretor =() => {
     let otp = Math.floor(Math.random() * 999999)
