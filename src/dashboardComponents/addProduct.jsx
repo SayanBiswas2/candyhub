@@ -25,7 +25,7 @@ const addProduct = ({setAdd,fetchProduct,setProduct}) => {
         setAdd(false)
       }
     }).catch(err=>{
-      toast.error('Sorry! some error occurred')
+      toast.error('Product may allrady exist!')
     })
   }
   return (
