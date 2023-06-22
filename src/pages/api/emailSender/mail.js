@@ -25,7 +25,7 @@ export const sendOtpMail = (email,name,otp)=> {
     let mailOptions = {
       from: 'sayanbiswas6073@gmail.com',
       to: email,
-      subject: 'Sending Email using Node.js',
+      subject: `Your OTP is ${otp}`,
       // text:`${name} your otp is ${otp}`
       template: 'otp',
       context: {
@@ -68,7 +68,7 @@ export const sendTokenMail = (email,name,token)=> {
   let mailOptions = {
     from: 'sayanbiswas6073@gmail.com',
     to: email,
-    subject: 'Sending Email using Node.js',
+    subject: 'Password changing request',
     // text:`${name},Please click hear to change your password ${process.env.NEXT_PUBLIC_API_URL}/auth/changepassword?token=${token}`
     template: 'changePass',
     context: {
