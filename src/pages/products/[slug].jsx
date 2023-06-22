@@ -12,7 +12,7 @@ function slug() {
     const [hasMore, setHasMore] = useState(true)
 
     const fetchProducts = async() => {
-      axios.post(`/api/getproducts`,{
+      axios.post(`/api/getProducts`,{
         from:product.length,
         slug:slug
       }).then(res=>{
